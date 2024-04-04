@@ -10,7 +10,7 @@ export const  AgentList = () => {
                <div class="flip-card pt-5">
                   <div class="row">
                     <div class="col-md-6">
-                        <div class="card card-flip h-100">
+                        <div class="card card-flip">
                             <div class="card-front text-white badge badge-primary">
                                 <div class="card-body">                                    
                                     <h6 class="card-title">Jovany Kuhlman</h6>
@@ -35,7 +35,7 @@ export const  AgentList = () => {
                         </div>
                     </div>
                      <div class="col-md-6">
-                        <div class="card card-flip h-100">
+                        <div class="card card-flip">
                             <div class="card-front text-white badge badge-primary">
                                 <div class="card-body">                                    
                                     <h6 class="card-title">Coleman West</h6>
