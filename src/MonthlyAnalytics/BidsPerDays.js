@@ -1,61 +1,95 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { AdminNav } from '../NavBar/AdminNav';
 import Chart from 'chart.js/auto'; // Import Chart from chart.js
+import api from '../api';
 
 export const BidsPerDays = () => {
-  const [isShown, setIsShown] = useState(false);
   const chartRef = useRef(null);
-
+  const [selectedMonth, setSelectedMonth] = useState('');
+  const [selectedYear, setSelectedYear] = useState('');
+  const [showChart, setShowChart] = useState(false);
+  const [xValues, setXValues] = useState([]);
+  const [yValues, setYValues] = useState([]);
   const months = [
-    'Month', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
+    'January', 'February', 'March', 'April', 'May', 'June', 
+    'July', 'August', 'September', 'October', 'November', 'December'
   ];
 
-  const handleClick = () => {
-    setIsShown(!isShown);
-    const selectedMonth = document.getElementById('monthSelect').value;
-    const selectedYear = document.getElementById('yearSelect').value;
-    console.log("Selected Month:", selectedMonth);
-    console.log("Selected Year:", selectedYear);
-    // Fetch data based on selected month and year here
-    // Update chart with new data if needed
-    updateChart();
-  };
 
-  const updateChart = () => {
-    if (isShown) {
-      const xValues = Array.from({ length: 30 }, (_, i) => i + 1);
-      const yValues = [5,10,15,15,20,25,30,35,50,34,25,30,25,20,25,30,35,17,45,20,15,20,25,30,35,33,50,44,3,50];
+  useEffect(() => {
+    if (!chartRef.current) return;
 
-      if (chartRef.current) {
-        chartRef.current.data.labels = xValues;
-        chartRef.current.data.datasets[0].data = yValues;
-        chartRef.current.update();
-      } else {
-        createChart(xValues, yValues);
+    // Check if there's an existing chart instance
+    if (chartRef.current.chart) {
+      // Destroy the existing chart instance
+      chartRef.current.chart.destroy();
+    }
+
+    if (showChart) {
+      const ctx = chartRef.current.getContext('2d');
+      chartRef.current.chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: xValues,
+          datasets: [{
+            label: 'Bids Per Day',
+            data: yValues,
+            backgroundColor: 'rgba(0, 123, 255, 0.6)',
+            borderColor: 'rgba(0, 123, 255, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+			  /* ticks: {
+                precision: 0 // Ensures integer values are displayed on the y-axis
+              } */
+            }
+          }
+        }
+      });
+    }
+
+    // Clean up function
+    return () => {
+      if (chartRef.current.chart) {
+        chartRef.current.chart.destroy();
       }
+    };
+  }, [xValues, yValues, showChart]);
+
+  const handleClick = () => {
+	   if (selectedMonth && selectedYear) {
+      setShowChart(true);
+      fetchData(selectedMonth, selectedYear);
+    } else {
+      // Show error message or handle the case when month and year are not selected
     }
   };
 
-  const createChart = (xValues, yValues) => {
-    chartRef.current = new Chart("myCharta", {
-      type: "line",
-      data: {
-        labels: xValues,
-        datasets: [{
-          fill: false,
-          lineTension: 0,
-          backgroundColor: "rgba(0,0,255,1.0)",
-          borderColor: "rgba(0,0,255,0.1)",
-          data: yValues
-        }]
-      },
-      options: {
-        legend: { display: false },
-        scales: {
-          y: { ticks: { min: 1, max: 50 } }
-        }
-      }
-    });
+  const fetchData = async (month, year) => {
+    try {
+      // Make API call to fetch data for selected month and year
+      const response = await api.get(`/admin/total-number-of-car/BidsPerDayOfTheMonth/${year}/${month}`);
+      const data = response.data.Vehicle_Count; // Assuming the response contains data for the chart
+
+      // Map the response data to xValues and yValues
+      const xValues = data.map(item => item.day_of_month);
+      const yValues = data.map(item => item.Bid);
+
+      setXValues(xValues);
+      setYValues(yValues);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  const updateChart = (newData) => {
+    // Update chart with new data
+    // You need to replace the code here with the logic to update the chart
+    console.log("Updating chart with new data:", newData);
   };
 
   return (
@@ -67,31 +101,28 @@ export const BidsPerDays = () => {
             <h3 className="main-heading text-center">Bids Per Day Of The Month</h3>
             <form>
               <div className="form-group">
-                <label htmlFor="monthSelect" className="mr-3">Bids per day of the month</label>
-                <select className="form-control mx-2" id="monthSelect">
+                <label htmlFor="monthSelect" className="mr-3">Bids Per Day Of The Month</label>
+                <select className="form-control mx-2" id="exampleFormControlSelect1" onChange={(e) => setSelectedMonth(e.target.value)}>
                   {months.map((month, index) => (
-                    <option key={index}>{month}</option>
+                    <option  value={index+1} key={index}>{month}</option>
                   ))}
                 </select>
                 <label htmlFor="yearSelect" className="mr-3">Select Year:</label>
-                <select className="form-control mx-2" id="yearSelect">
+                <select className="form-control mx-2" id="exampleFormControlSelect2" onChange={(e) => setSelectedYear(e.target.value)}>
                   <option>Year</option>
                   <option>2024</option>
                   <option>2025</option>
-                  <option>2026</option>
-                  <option>2027</option>
-                  <option>2028</option>
-                  <option>2029</option>
-                  <option>2030</option>
-                  <option>2031</option>
+                  
                 </select>
               </div>
               <button type="button" className="btn btn-primary px-3 mx-3 mb-3" onClick={handleClick}>Show</button>
             </form>
           </div>
-          <div id="myDiv" style={{ display: isShown ? 'block' : 'none' }}>
-            <canvas id="myCharta" style={{ width: '650px', maxWidth: '100%' }}></canvas>
-          </div>
+          {showChart && (
+            <div>
+              <canvas ref={chartRef}></canvas>
+            </div>
+          )}
         </div>
       </div>
     </section>

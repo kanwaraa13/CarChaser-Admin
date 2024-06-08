@@ -3,7 +3,7 @@ import { AdminNav } from '../NavBar/AdminNav';
 import api from '../api';
 import { useNavigate } from 'react-router-dom';
 
-export const  CarListing = () => {
+export const Bos = () => {
   const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState(null);
@@ -14,7 +14,7 @@ export const  CarListing = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await api.get(`/vehiclelisting/0/Admin/NewCars`);
+        const response = await api.get(`/vehiclelisting/0/Admin/BOS`);
         const { message, Vehicle } = response.data;
         // Check if message is true and Vehicle is an array
         if (message && Array.isArray(Vehicle)) {
@@ -39,7 +39,7 @@ export const  CarListing = () => {
 
   const fetchSerchdata = async () => {
     try {
-      const response = await api.post(`/vehiclesearch/0/Admin/NewCars`, {
+      const response = await api.post(`/vehiclelisting/0/Admin/BOS`, {
         search: searchQuery
       });
       console.log(response.data); // Log the entire response data
@@ -62,19 +62,9 @@ export const  CarListing = () => {
       <AdminNav />
       <div className="container">
         <div className="view-post-panel mid-table mt-4">
-          <h3 className="main-heading py-3">New Cars</h3>
+          <h3 className="main-heading py-3">BOS</h3>
           <div className="car-bid-gallary">
-          <form onSubmit={(e) => e.preventDefault()} className="input-group">
-              <button type="submit"><i className="fa-solid fa-magnifying-glass"></i></button>
-              <input
-                type="search"
-                id="form1"
-                className="form-control"
-                placeholder="Search Cars"
-                value={searchQuery}
-                onChange={handleSearchChange}
-              />
-            </form>
+        
             <div className="carbid-gallery-panel py-4">
             <div className="row">
                   {loading ? (
@@ -86,7 +76,7 @@ export const  CarListing = () => {
                   ) : (
                   posts.map(post => (
                      <div key={post.id} className="col-lg-4 col-12">
-                        <a href={`/car-details/${post.Vehicle_Id}`}>
+                        <a href={`/bos-car-details/${post.Vehicle_Id}`}>
                       <div className="carbid-image-panel">
                         {/* Replace 'your_static_id' with your desired static ID */}
                         {post.Exterior_Image && (

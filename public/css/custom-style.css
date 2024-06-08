@@ -6,8 +6,10 @@
 	--color-info: #043074;
 
 }
+
+
  img{max-width: 100%;}
-body{font-family: "Poppins", sans-serif;font-weight: 300;}
+body{font-family: "Poppins", sans-serif;font-weight: 300; }
 button:focus {  outline: 0px dotted; outline: 0px auto -webkit-focus-ring-color;}
 .btn-primary{color: white!important;background-color: var(--color-primary)!important;border-color: var(--color-primary)!important;border-radius: 12px!important;}
 a{cursor: pointer;}
@@ -31,15 +33,16 @@ input[placeholder] {color: var(--color-light); opacity: 1; }
 .login-form .form-control{border-radius: 10px;padding: 0.85rem 0.75rem;font-size: 1.2rem;font-weight: 600;color: var(--color-light);border: 1.8px solid #ced4da;}
 .adminform-inner .btn-primary{font-size: 20px; font-weight: 500;}
 .adminform-inner .form-check a{color:#898989 ;}
-.monthy-report form select.form-control:not([size]):not([multiple]) {  height: calc(2.25rem + 15px)!important;    width: 160px;    margin: 10px 10px;}
+.monthy-report form select.form-control:not([size]):not([multiple]) {  height: calc(2.25rem + 15px)!important;    width: 160px;    margin: 0px 10px;}
 .monthy-report .form-group{    display: flex !important;  align-items: center;}
 .monthy-report{padding-top: 3.5rem;}
-.monthy-report form{    display: flex; align-items: center;}
+.monthy-report form{    display: flex; align-items: center; justify-content: center;flex-wrap:wrap;}
 /* Header css*/
 header{background: #C3DFFB;}
 .navbar-expand-lg .navbar-collapse {     justify-content: space-between;}
 .navbar-nav .nav-link{font-size: 15px; font-weight: 500;  padding: 0 1.8rem;}
 .signout-btn{}
+
 .navbar-brand{max-width: 220px;}
 .navbar-brand img{width: 100%;}
 .navbar-expand-lg .navbar-nav {padding: 0 2rem;}
@@ -48,7 +51,7 @@ header{background: #C3DFFB;}
 .navbar-light .navbar-nav .nav-link:hover {color: var(--color-primary)!important;}
 .navbar-light .navbar-nav .active>.nav-link{color: var(--color-primary)!important;}
 header .dropdown-item{padding: 0.8rem;}
-header .dropdown-item:hover{background-color:#c3dffb ;    font-weight: 600;}
+header .dropdown-item:hover{background-color:#c3dffb ;}
 .hiddennew {    display: none;font-size: 45px;    font-weight: 600;  }
 
 
@@ -80,7 +83,7 @@ table{padding: 0 1.5rem;}
 .external-damage-panel h4{font-size: 16px;color: var(--color-primary); font-weight: 500;text-transform: capitalize;}
 .external-damage-panel span{color: var(--color-light);font-size: 14px;text-transform: capitalize;}
 .vehicle-detail h5{font-size: 14px;color: var(--color-primary);text-transform: capitalize;}
-.car-list-image{height: 100%;}
+
 .seller-list h4{font-size: 14px;color: var(--color-primary);text-transform: capitalize;width: 103px;}
 .seller-list span{color: var(--color-light);font-size: 14px;text-transform: capitalize;}
 .seller-details{    width: 87%;  margin: auto;  padding: 2rem 0;}
@@ -107,7 +110,6 @@ table{padding: 0 1.5rem;}
 .agent-btn-details{display: flex;  flex-wrap: wrap;  justify-content: space-between;}
 .agent-btn-details .edit-btn-details a{text-transform: capitalize;}
 .agent-section .navbar-expand-lg .navbar-nav {   padding: 0px 1rem!important;}
-.navbar-expand-lg .navbar-nav .dropdown-menu {   border: 0px;background: #c3dffb; margin-top: 20px;}
   .flex-control-thumbs li {   padding: 0px 3px;}
   .flexslider-thumbnails { margin: 20px 0; }
   .flexslider-thumbnails ul.slides {  margin: 0;  padding: 0;}
@@ -118,10 +120,16 @@ table{padding: 0 1.5rem;}
   .flex-direction-nav a:before {font-size: 33px!important;color: white!important;}
   .flexslider .slides img {height: 100%;}
   .flex-viewport ul li{   height: 343px;}
-  
+  .car-no-available h3{font-size: 37px; font-weight: 600; text-align: center;  color: #1f89f0;    margin-top: 1.5rem;}
+  .car-no-available{display: flex; justify-content: center;    flex-direction: column;    align-items: center;margin-top: 2rem;box-shadow: 0px 1px 8px 1px rgb(31 137 240);
+    border-radius: 8px;height: 400px;    justify-content: space-evenly;margin-bottom: 1.5rem;}
+  .car-no-available span{text-align: center;  margin-top: 2rem;  font-size: 64px;font-weight: 700; /* border: 8px solid #1f89f0; */ /* padding: 1rem; */  
+        width:166px;height:166px;display:flex;border-radius: 100%;justify-content:center;align-items:center;  background-color: #1f89f0; color: white; border-radius:100%;   margin-bottom: 1.5rem;}
+	.car-no-available .car-no-span span{text-align: center;  margin-top: 2rem;  font-size: 64px;font-weight: 700; /* border: 8px solid #1f89f0; */ /* padding: 1rem; */  
+        padding: 0rem 1rem;background-color: #1f89f0; color: white; border-radius:10px;   margin-bottom: 1.5rem;width:100%;    height: auto;
+}
 @media(max-width: 1199px) and (min-width: 992px){
 	.navbar-expand-lg .navbar-nav {padding: 0 2rem!important;}
-	.navbar-nav .nav-link { font-size: 12px!important;}
 }
 
 @media (max-width:992px){
@@ -130,11 +138,6 @@ table{padding: 0 1.5rem;}
 	.nav-item .nav-link:hover{color: var(--color-primary);}	
 	.signout-btn{margin-top: 0.8rem;}
 	.newcar-modal .modal-dialog { margin: 2rem; margin-top: 4.5rem!important;}
-	.navbar-expand-lg .navbar-nav {padding: 0px!important;}
-	.navbar-expand-lg .navbar-nav .nav-link{padding: 0px!important;}
-	
-
-}
 	
 	
 }
@@ -150,17 +153,10 @@ table{padding: 0 1.5rem;}
 	.delete-status { width: 100%;}
 	.delete-status p br{display: none;}
 	.agent-list-modify {  width: 100%;}
-	.monthy-report form {flex-direction: column;}
-	.monthy-report .form-group {flex-direction: column;}
-	#myDiv{    text-align: center;}
 
 }
 
-@media(max-width: 575px){
-	.flexslider .slides img {   object-fit: cover;}
-	.top-bid-price h4 {  font-size: 18px!important;}
 
-}
 
 
 
@@ -373,10 +369,10 @@ table{padding: 0 1.5rem;}
 
 /*new car listing */
 .modal-content {box-shadow: 0px 0px 2px 0px rgb(0 123 255 / 88%);}
-.newcar-modal .modal-dialog { max-width: 900px!important;margin-top: 4.5rem }
+.newcar-modal .modal-dialog { max-width: 1050px!important;margin-top: 4.5rem }
 .modal-header{position: absolute; border: 0px; padding: 0; color: white; border-radius: 100%;width: 100%;}
-.modal-header .close{opacity: 1; width: 36px; height: 38px; border-radius: 20px; display: flex;background: #007bff; justify-content: center; align-items: center;}
-.modal-header .close span{opacity: 1;font-size: 2rem;font-weight: 400;color: white; width: 100%;  display: flex;  justify-content: center; padding-bottom: 10px;}
+.modal-header .close{opacity: 1; width: 36px; height: 38px; border-radius: 20px; display: flex;background-image: url('../images/icon.png')!important;background-size: contain; padding: 0px !important;justify-content: center; align-items: center;}
+.modal-header .close span{opacity: 1;font-size: 0rem!important;font-weight: 400;color: white;width: 100%;height: 100%;}
 .carlist-heading h4{font-size: 14px;color: var(--color-primary); width: 130px;text-transform: capitalize;}
 .carlist-heading span{width: 150px;color: var(--color-light);font-size: 13px;}
 .carlist-heading{display: flex; align-items: center;}
@@ -384,7 +380,7 @@ table{padding: 0 1.5rem;}
 .external-damage-panel h4{font-size: 16px;color: var(--color-primary); font-weight: 500;text-transform: capitalize;}
 .external-damage-panel span{color: var(--color-light);font-size: 14px;text-transform: capitalize;}
 .vehicle-detail h5{font-size: 14px;color: var(--color-primary);text-transform: capitalize;}
-.car-list-image{height: 100%;}
+
 .seller-list h4{font-size: 16px;color: var(--color-primary);text-transform: capitalize;width: 18%;}
 .seller-list span{color: var(--color-light);font-size: 16px;text-transform: capitalize;}
 .seller-details{    width: 87%;  margin: auto;  padding: 2rem 0;}
@@ -408,7 +404,7 @@ Dealer screens css
 
 /*signin page css*/
 .dealer-signin form{width: 60%;margin: auto;}
-.sub-heading{color: #6DC1FF;font-size;16px;font-weight: 500; text-align: center;}
+.sub-heading{color: #6DC1FF;font-size:16px;font-weight: 500; text-align: center;}
 .update-btn-td {background:white!important;outline: 1px solid var(--color-primary)!important;}
 
 
@@ -554,24 +550,25 @@ header .calendar-current-date {
 
 
 
+
 .card-flip > div {
   backface-visibility: hidden;
   transition: transform 0.5s;
   transition-timing-function: linear;
   width: 100%;
-  height: 250px;
   margin: 0;
   display: flex;
   align-items: center;
+  height: 100%;
 
 }
 .card-simple{height: 315px!important;}
 .card-simple .card-front{height: 100%;  display: flex; justify-content: center;}
-.card-simple .card-body{    display: flex;  flex-direction: column;  justify-content: center;}
+.card-simple .card-body{    display: flex;  flex-direction: column;  justify-content: center; height: 100%;}
 .card-front {
   transform: rotateY(0deg);
 }
-
+.card-front .card-body  .card-title{text-transform: capitalize;}
 .card-back {
   transform: rotateY(180deg);
   position: absolute;
@@ -586,57 +583,178 @@ header .calendar-current-date {
 .card-flip:hover .card-back {
   transform: rotateY(0deg);
 }
-.flip-card .card{width: 70%; }
-
+.flip-card .card  {width: 100%;margin:auto; max-width: 351px;}
+.flip-card{margin-bottom: 1.5rem;}
 
 .flip-card .card-back.bg-white:before{position: absolute;top: 0;left: 0;width: 100%;height: 100%;content: ''; background: #a9a0a04d;z-index: 99;}
-.flip-card .card-back.bg-white .card-body{position: relative;z-index: 9999;}
+.flip-card .card-back.bg-white .card-body{position: relative;z-index: 9999; }
+
+
+
+.flex-control-thumbs{display: flex;}
+.flex-control-thumbs li {position: relative;}
+.flex-control-thumbs li img{height: 100%; object-fit: cover;}
+
+
+.carbid-image-panel{padding-top: 56%;}
+.carbid-image-panel img{position: absolute; left:-100%; right:-100%; margin: auto; top: -100%; bottom: -100%; 
+max-width: none; width: 100%;}
+.book-appointment-panel form select.form-control:not([size]):not([multiple]) {height: calc(2.25rem + 23px);}
+
+.form-add-image .form-group{width: 100%; position: relative; height: 100%;}
+.form-add-image .form-group input{position: absolute; left: 0; top: 0; width:100%;
+height: 100%;}
+.form-add-image .form-group label{top: 1rem;}
+.form-add-image .image-preview button{ position: absolute; right: 0; top: 0; z-index: 9; background: red;  border: 0 none;
+  border-radius: 50px;  color: #fff;  width: 30px;  height: 31px;}
+
+  input{text-transform: none !important;}
+
+  .form-add-image button{position: absolute; right: 0; cursor: pointer; z-index: 9999;}
+
+  .carlist-details{margin-bottom: 15px;}
+  .carlist-details .carlist-heading{margin-bottom: 5px;}
+  .car-details .vehicle-detail .row{margin-bottom: 8px;}
+  .external-damage-panel span{color:#000;}
+  .carlist-details .inner-listname {color: #000;}
+  .car-details .vehicle-detail h6{font-weight: 300; font-style: italic; color: #A8AFB9;}
+
+  .flexslider .slides img{object-fit: cover; object-position: center !important;}
+  #vechiclevideo iframe{width: 100%; float: none; display: inline-block; vertical-align: bottom;}
+  #vechiclevideo{padding: 15px; background: #D1E7FC; border-radius: 16px;}
+  #vechiclevideo h2 { font-size: 24px; }
+
+  input{text-transform: none !important;}
+  .agent-weekdays ul{padding-left: 0px;}
+  .agent-weekdays ul li{list-style:none;padding-right: 25px;}
+  .agent-weekdays ul li label{  padding: 0 5px;font-size: 18px;font-weight: 600;}
+  .agent-weekdays ul li input[type=checkbox] { transform: scale(1.5);}
+  .agent-newcal{display: flex;}
+  .agent-newcal .form-group {margin-bottom:0}
+  .agent-newcal .form-group label{padding: 0px 10px;  margin: 0;font-size: 18px; font-weight: 700;}
+  .agent-newcal .form-group select{    margin: 0 4px;    margin-bottom: 6px;}
+  .showweekdays button{    margin: 0px 5px; font-size: 18px;font-weight: 500; background: none;  }
+  .showweekdays{margin-bottom: 15px;}
+
+
+  select.form-control:not([size]):not([multiple]) {
+    height: calc(3.25rem + 2px);
+}
+.mid-panel{padding-bottom:1rem;}
+.panel{display: flex; justify-content: flex-start; flex-wrap: wrap;}
+.panel div{max-width: 60px; width: 100%; display: flex;  align-items: center;  border: 1px solid #00000033;
+    justify-content: space-evenly;  border-radius: 3px;   margin-right: 15px;    margin-bottom: 6px;}
+.panel div label{margin-bottom: 0px;}
+.agent-newcal select{ border: 1px solid #ccc;   padding: 8px 15px;  border-radius: 8px;}
+.newagent-list .btn-primary{max-width: 220px; width:100%;margin:auto;}
+.top-bid-price{flex-wrap: wrap;}
+.top-bid-price .submit-panel{width: 100%; margin: 1rem 0;}
+.top-bid-price .submit-panel .inner{ width: 400px; display: flex;  flex-wrap: wrap;}
+.top-bid-price .submit-panel .inner textarea{ width: 100%; height: 100px; padding: 0.8rem;  border: 1px solid #1F89F0;
+  border-radius: 10px;}
+.monthy-report .btn-primary {max-width: 118px;width: 100%;}
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  .navbar-light .navbar-brand .navbar-brand{max-width: 256px!important;width:100%;}
+  .navbar-brand img{width:100%;}
+  .dealer-bill input{box-shadow: 0 0 0 .2rem rgb(0 123 255 / 0%)!important;}
+  .dealer-head {max-width: 320px; text-align: center;  margin: auto;}
+  .dealer-head img{width:100%; height: 100%;}
+  .main-headding{    text-transform: uppercase;  text-align: center;  color: #5596fb; }
+  .new-group .form-control{border:0px;border-bottom:1px solid; margin: 0px !important;border-radius: 0px !important;padding: 0px !important;}
+  .newbill-form .newbill-border{width: 55%; padding-left:15px;  }
+  .new-group .form-group{margin: 0 !important;margin-bottom: 5px !important;}
+  .newbill-form .col-lg-3 .new-group p {width: auto!important;}
+  .new-group-box{width: 100%;  height: 100%;   border: 2px dashed #5596fb;    display: flex;  flex-direction: column; align-items: center;
+  justify-content: center;}
+  .new-group-box h2{text-align: center; font-family: 'ClashDisplay-Regular';  font-size: 79px;  color: #5596fb;}
+  .seller-bill .d-flex .new-group { }
+  .seller-bill .d-flex .new-group .newbill-border{   width: 154px;   border-bottom: 1px solid #c2c9cd;  margin-bottom: 0;   margin-left: 49px;}
+  .seller-bill .d-flex {align-items: center;}
+  .newbill-form .new-group{    display: flex;  align-items: flex-end;    padding: 4px 0;}
+  .newbill-form .new-group  span{padding-left:15px;}
+  .biil-price-new{    width: 23.4%;}
+  .gst-main{    text-align: end;  float: right;  height: 100%;}
+  .mvda-kms{    display: flex; flex-direction: column; justify-content: space-around;}
+  .mvda-bottom-left p{padding-bottom:15px;}
+  .mvda-checkbox p{padding-right:7px;}
+  .newbill-form{padding-left: 14px;   border-left: 2px solid;}
+  .newbill-form .new-group p{    font-size: 15px;  font-weight: 500; margin:0; width: 110px;}
+  .bill-price .table-bordered th {border: 1px solid #434040 !important;  font-size: 14px;  font-weight: 500;padding: .5rem;}
+  .bill-price .table-bordered td{border: 1px solid #434040 !important;padding: .5rem;}
+  .bill-price-bottom{width: 100%;}
+  .distane-travel{display: flex;  justify-content: space-between;}
+  .distance-checkbox  .form-check label{margin-left: -10px;}
+  .distance-checkbox  .form-check input{    margin-left: 7px;}
+  .distance-checkbox  .form-check{width: 70px;}
+  .bill-price{border: 4px solid transparent;} 
+  .info-bill .newbill-border {margin-left: 0px!important;}
+  .info-bill .new-group {align-items: flex-start!important;flex-direction: column;padding-top: 17px;}
+  .info-bill{padding-top: 18px;}
+  .gst-para{width: 100%; background: #647881;  height: 33px; color: white; text-align: right;padding-right: 6px; padding-top: 10px;margin-bottom: 0px;font-size: 13px;border-bottom: 1px solid white;}
+  .gst-price{    width: 50%;  text-align: right;  padding-right: 10px;margin-bottom: 0px;display: flex; justify-content: space-between;align-items: center;border: 1px solid #647881;border-right: 4px solid #647881;}
+  .gst-section{display: flex;      margin-left: auto;}
+  .gst-text{    width: 71%; margin-left: auto;  padding-top: 18px;}
+  .gst-text p{text-align: justify;font-size: 14px;}
+  .dealer-information {    padding-bottom: 1.7rem; height: 180px;margin-top: -5px;    margin-right: 3px;}
+  .SEARCHES-section{ border-bottom: 5px dotted #647881;padding: 1.5rem 0;}
+  .mt-regi{   padding-top: 2rem; display: flex;justify-content: center;;  }
+  .discloser-info {padding-top:4rem!important;}
+  .mt-regi-form{    display: flex; justify-content: space-between;   width: 500px; margin-left: 25px;} 
+  .mvda-distance span{font-size: 11px;}
+  .mt-regi label{font-size: 10px;}
+  .mvda-checkbox{    display: flex; justify-content: space-between;}
+  .mvda-bottom-para{    display: flex;   justify-content: space-between;}
+  .mvda-bottom-box{    width: 100px;   width: 130px;   justify-content: space-between;border: 1px solid #647881;height:100%;}
+  .mvda-bottom-right .form-check{width: 60px;height: 24px;}
+  .mvda-bottom-right{display: flex;}
+  .discloser-info  p{font-size: 14px!important;}
+  .mvda-distance{padding: 0 10px; border: 2px solid #647881;}
+  .mvda-new-distance{background: #E6ECED;}
+  
+  .discloser-info .newbill-border{width: 100%;  height: 15px; border-bottom: 2px solid #c2c9cd;    }
+  .mvda-bottom-end .newbill-form {border: 0px!important;}
+  .mvda-bottom-end .newbill-border{   height: 25px; width: 100% !important; border-bottom: 1px solid grey;   margin-bottom: 5px;}
+  .mt-regi-form .form-check-input{margin-top: 7px;}
+  .mvda-bottom-box .new-group{height: 100%;}
+  .mvda-bottom-box .new-group input{    height: 100%;}
+  .mvda-bottom-box .new-group .newbill-border{width: 100%; height: 100%; border-bottom: 0px solid #c2c9cd; }
+  .new-group-pro .newbill-border{    height: 100%; border: 0px; margin: 0px;}
+  .new-group-pro .newbill-border input{background: transparent; border: 0px !important; border-bottom: 1px solid black !important;
+  border-radius: 0px!important;}
+ .gst-section .newbill-border{display: flex;  margin: 0;  border: 1px solid #647881;}   
+ .gst-section .newbill-border label{margin:0;}
+ .gst-section .newbill-border input{border: 0px !important;padding:0px;    width: 80%; margin-left: auto;}
+ .purchase-heading{ width: 160px;}
+ .dealer-sellerinfo h4{width:140px;}
 .hidden {
       display: none;
     }
 
+  
+
 @media (max-width: 1200px){
 	 .Verification form {    width: 100%;}
 	 .readyto-sell-priority {width: 85%;}
+   .nav-item {   padding: 5px 0;}
+   .nav-item .nav-link {  padding: 0px !important;}
 
 	}
-
-
-
-
 @media(max-width: 992px){
 .Verification {  width: 60%!important;}
 .step-indicator {width: 50%!important;}
 .readyto-sell {height: 195px;}
 .readyto-sell .form-check label { width: 133px;height: 41px;}
 .our-view-list {width: 95%;}
-.flip-card .card {    width: 100%; }
+.newbill-form .new-group p {width: auto;}
+.bill-price{overflow-x:auto;}
+p{font-size: 14px!important;}
+.biil-price-new {  width: auto;}
+.mvda-kms{    display: flex; flex-direction: column; justify-content: space-around;}
+.gst-main {  width: 40%;}
+.agent-list-modify {width: 80%;}
 
 }
 @media(max-width: 991px){
@@ -654,16 +772,19 @@ header .calendar-current-date {
 	.our-priority { width: 100%;}
 	.dealer-section { width: 80%!important}
 	.dealer-signin form {  width: 100%;}
-	.flip-card .card { width: 100%; margin: auto;}
-	.flip-card{padding-top: 0px!important;margin-bottom: 2.5rem;}
-	.flip-card .card{margin-top: 15px;}
-
+  .new-group-box h2 {font-size: 43px;}
+  .gst-main { width: 80%;}
+  .mt-regi {  display: flex;  justify-content: center; flex-direction: column; align-items: center;}
+  .mt-regi-form {width: 300px;}
+  .mvda-bottom-box {   width: 118px;}
+  .add-btn .btn-primary {margin:auto;}
+  .carlist-details {margin-top: 1.5rem;}
 }
 
 @media (max-width: 575px){
  
  	.Verification-input .form-control {  width: 61px;  height: 57px;}
- 	
+ 	.navbar-brand {max-width: 256px;width: 100%;;}
  	.step-indicator {width: 100%!important;}
  	.our-view-list {height: 75px;flex-direction: column;align-items: flex-start;}
  	.our-view-list p {font-size: 14px;}
@@ -672,4 +793,24 @@ header .calendar-current-date {
  	.bookappointment-btn a{white-space: normal;}
  	.experience-seamless-panel { margin: 1rem!important;padding: 1rem!important;}
  	.bookappointment-btn {text-align: center;}
+   .form-price-bid {flex-wrap: wrap;}
+   .form-bid-price textarea.form-control {    width: 169px;}
+   .flexslider .slides img {  height: 100%;   object-fit:cover;}
+   .mvda-bottom-left p{padding-bottom: 11px;}
+   .gst-main {    width: 100%;}
+   .gst-para {  width: 89%;}
+   .agent-list-modify {  width: 100%;}
+   .car-no-available h3 { font-size: 30px;}
+   .monthy-report .form-group label{width: 100%;  text-align: center;}
+   .monthy-report .form-group {    flex-wrap: wrap;  justify-content: center;}
+   .monthy-report form select{margin-bottom: 1rem!important;}
+}
+@media print{
+   
+  html{-webkit-print-color-adjust: exact; width: 100%; height: 100%; margin: 10 0; padding: 0;}        
+  .print-row .col-lg-6{width:49%;}   
+  .print-info .row .col-lg-6{width:49%;}
+  .discloser-info{ padding-top: 10.5rem;color:red;}
+  .biil-price-new{padding-left: 45px;}
+  .gst-para {margin-bottom: 1px;}
 }
